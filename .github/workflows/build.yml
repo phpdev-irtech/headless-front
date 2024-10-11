@@ -90,6 +90,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: generate html
+        run: echo "<h1>Hello world</h1>" >> ./.next/standalone
       - name: copy public
         run: cp -r ./public ./.next/standalone
       - name: copy static
