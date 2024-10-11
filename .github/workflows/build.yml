@@ -91,9 +91,9 @@ jobs:
       - name: Build
         run: npm run build
       - name: copy public
-        run: cp ./public ./.next/standalone
+        run: cp -r ./public ./.next/standalone
       - name: copy static
-        run: cp ./.next/static ./next/standalone/.next
+        run: cp -r ./.next/static ./next/standalone/.next
       - name: zip artifact 
         run: zip ../out.zip ./next/standalone/. -r
       - name: Archive Production Artifact
