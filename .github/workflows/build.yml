@@ -90,8 +90,12 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Zip artifact for upload
-        run: cd .next && cp ../public standalone && cp static .next  && zip ../out.zip . -r
+      - name: copy public
+        run: cp ./public ./.next/standalone
+      - name: copy static
+        run: cp ./.next/static ./next/standalone/.next
+      - name: zip artifact 
+        run: zip ../out.zip ./next/standalone/. -r
       - name: Archive Production Artifact
         uses: actions/upload-artifact@v4
         with:
