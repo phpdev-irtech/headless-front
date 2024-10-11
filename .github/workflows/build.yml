@@ -95,7 +95,7 @@ jobs:
       - name: copy static
         run: cp -r ./.next/static ./.next/standalone/.next
       - name: zip artifact 
-        run: zip ../out.zip ./next/standalone/. -r
+        run: zip ../out.zip ./.next/standalone/. -r
       - name: Archive Production Artifact
         uses: actions/upload-artifact@v4
         with:
