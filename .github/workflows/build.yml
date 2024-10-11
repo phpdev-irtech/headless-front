@@ -93,7 +93,7 @@ jobs:
       - name: copy public
         run: cp -r ./public ./.next/standalone
       - name: copy static
-        run: cp -r ./.next/static ./next/standalone/.next
+        run: cp -r ./.next/static ./.next/standalone/.next
       - name: zip artifact 
         run: zip ../out.zip ./next/standalone/. -r
       - name: Archive Production Artifact
